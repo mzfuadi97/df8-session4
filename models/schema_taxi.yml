@@ -1,0 +1,18 @@
+
+version: 2
+
+models:
+    - name: yellow_taxi
+      description: "tugas"
+      columns:
+          - name: vendors.name
+            description: "Nama vendor"
+            tests:
+                - not_null
+
+          - name: payment_type.approach
+            description: "Tipe pembayaran"
+            tests:
+                - accepted_values:
+                    values: ['Credit card', 'Cash', 'No charge', 'Dispute', 'Unknown', 'Voided trip']
+                    severity : warn
